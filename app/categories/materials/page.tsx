@@ -155,10 +155,10 @@ function Page() {
   // console.log(data);
 
   return (
-    <div>
+    <div className="flex flex-col bg-amber-50 dark:bg-neutral-900 px-5 py-10 lg:px-40 lg:py-12 gap-7 border-b border-gray-200 dark:border-neutral-700">
       <BackBtn />
-      Materials
-      <div>
+      <h1 className="text-4xl font-bold dark:text-white">Materials</h1>
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-7 ">
         {data.map((term) => (
           <TermCard
             key={term.id}

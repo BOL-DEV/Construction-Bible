@@ -133,7 +133,7 @@ function Page() {
   // console.log(data);
 
   return (
-    <div>
+    <div className="flex flex-col bg-amber-50 dark:bg-neutral-900 px-4 py-10 lg:px-40 lg:py-12 gap-4 border-b border-gray-200 dark:border-neutral-700">
       <BackBtn />
       Tools
       <div>

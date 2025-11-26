@@ -19,7 +19,8 @@ const allTerms: Term[] = [
     name: "Concrete",
     definition:
       "A composite material composed of fine and coarse aggregate bonded together with cement that hardens over time.",
-    image: "/concrete-construction-material-mix.jpg",
+    image:
+      "https://v0-construction-bible-app.vercel.app/aggregate-gravel-sand-construction.jpg",
     usage:
       "Used in foundations, walls, floors, and structural elements. Mixed on-site or delivered ready-mixed for large projects.",
     category: "materials",
@@ -30,7 +31,8 @@ const allTerms: Term[] = [
     name: "Rebar (Reinforcing Bar)",
     definition:
       "Steel bars or mesh used to reinforce concrete and masonry structures, providing tensile strength.",
-    image: "/steel-rebar-reinforcement-bars.jpg",
+    image:
+      "https://v0-construction-bible-app.vercel.app/cement-powder-construction-material.jpg",
     usage:
       "Embedded in concrete before it sets to create reinforced concrete structures like beams, columns, and slabs.",
     category: "materials",
@@ -41,7 +43,8 @@ const allTerms: Term[] = [
     name: "Lumber",
     definition:
       "Wood that has been processed into beams and planks, used as a building material.",
-    image: "/construction-lumber-wood-beams.jpg",
+    image:
+      "https://v0-construction-bible-app.vercel.app/caulking-sealant-application.jpg",
     usage:
       "Used for framing, flooring, roofing, and finishing work in residential and commercial construction.",
     category: "materials",
@@ -96,7 +99,8 @@ const allTerms: Term[] = [
     name: "Aggregate",
     definition:
       "Granular material such as sand, gravel, or crushed stone used in concrete and asphalt.",
-    image: "/aggregate-gravel-sand-construction.jpg",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStYtb-RWiyqSpbbLKzlFebR9R_syvYKDiOKQ&s",
     usage:
       "Makes up 70-80% of concrete mix. Different sizes used depending on concrete application requirements.",
     category: "materials",
@@ -466,7 +470,8 @@ const allTerms: Term[] = [
     name: "Architect",
     definition:
       "A professional who designs buildings and oversees their construction.",
-    image: "/placeholder.svg?height=200&width=400",
+    image:
+      "https://s3da-design.com/wp-content/uploads/2022/02/Architects-1024x1024.jpg",
     usage:
       "Creates building designs, prepares construction documents, and ensures projects meet building codes and client requirements.",
     category: "professionals",
@@ -609,7 +614,8 @@ const allTerms: Term[] = [
     name: "Beam",
     definition:
       "A horizontal structural element that carries loads perpendicular to its length.",
-    image: "/placeholder.svg?height=200&width=400",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbqgl-pJ7tjUtOhgG3W2b1Wf8LY4Jmaxytwg&s",
     usage:
       "Supports floors, roofs, and walls. Made from steel, concrete, or wood depending on span and load requirements.",
     category: "building-elements",
@@ -721,14 +727,20 @@ function Page() {
   console.log(data);
 
   return (
-    <div className="flex flex-col bg-amber-50 dark:bg-neutral-900 p-4 lg:px-40 gap-4 border-b border-gray-200 dark:border-neutral-700">
+    <div className="flex flex-col bg-amber-50 dark:bg-neutral-900 px-5 py-10 lg:px-40 lg:py-12 gap-7 border-b border-gray-200 dark:border-neutral-700">
       <BackBtn />
       <input
         className="bg-amber-50 p-4  rounded-lg shadow-md w-full lg:w-[50%] border border-neutral-200 dark:border-neutral-600 focus:outline-amber-600 dark:bg-neutral-800  dark:text-gray-200"
         type="search"
         placeholder="Filter construction terms..."
       />
-      <div>
+      <div className="flex flex-col gap-2">
+        <h1 className="text-4xl font-bold dark:text-white">
+          All Construction Terms
+        </h1>
+        <p className="dark:text-neutral-400">{`${data.length} terms available`}</p>
+      </div>
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-7 ">
         {data.map((term) => (
           <TermCard
             key={term.id}
