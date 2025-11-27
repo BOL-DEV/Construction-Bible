@@ -53,7 +53,7 @@ function Categories() {
         </p>
       </div>
 
-      <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6 p-6 lg:px-40 bg-amber-50 dark:bg-neutral-900 dark:text-gray-200">
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6 p-6 pb-20 lg:px-40 bg-amber-50 dark:bg-neutral-900 dark:text-gray-200">
         {categoryData.map((category) => (
           <CategoriesCard
             key={category.title}

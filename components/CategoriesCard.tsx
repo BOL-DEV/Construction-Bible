@@ -17,7 +17,7 @@ function CategoriesCard(Props: Props) {
     <Link href={`/categories/${modifyedTitle}`}>
       <div
         key={title}
-        className="group flex flex-col gap-3 border text-center border-gray-300 hover:border-amber-600 dark:border-neutral-700 rounded-lg p-14 hover:shadow-lg transition-shadow cursor-pointer bg-amber-50 dark:bg-neutral-800"
+        className="group flex flex-col gap-3 border text-center border-gray-300 hover:border-amber-600 dark:border-neutral-700 rounded-lg p-14 hover:shadow-lg transition-shadow cursor-pointer bg-amber-50 dark:bg-neutral-900/40"
       >
         <div className="flex items-center justify-center text-3xl p-4 bg-gray-300 group-hover:bg-orange-400 dark:group-hover:text-black dark:bg-neutral-700  rounded-lg mx-auto">
           {image}
