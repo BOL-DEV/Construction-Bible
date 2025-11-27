@@ -1,20 +1,34 @@
 "use client";
 
 import Link from "next/link";
-import React from "react";
-import { BiHeart, BiSun } from "react-icons/bi";
+import React, { useEffect, useState } from "react";
+import { BiHeart, BiMoon, BiSun } from "react-icons/bi";
 
 // interface Props {
 //   title: string;
 // }
 
 function Header() {
+  const [isDark, setIsDark] = useState(false);
+
+  useEffect(() => {
+    const saved = localStorage.getItem("theme");
+    const prefersDark = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    ).matches;
+
+    const shouldBeDark = saved ? saved === "dark" : prefersDark;
+
+    document.documentElement.classList.toggle("dark");
+    setIsDark(shouldBeDark);
+  }, []);
+
   const handleTheme = () => {
-    const html = document.documentElement;
+    // const newIsDark = !isDark;
+    setIsDark(!isDark);
 
-    console.log(html);
-
-    html.classList.toggle("dark");
+    document.documentElement.classList.toggle("dark");
+    localStorage.setItem("theme", isDark ? "dark" : "light");
   };
 
   // const { title } = props;
@@ -38,10 +52,17 @@ function Header() {
           <BiHeart /> <span className="hidden md:flex">Favorites</span>
         </h2>
 
-        <BiSun
-          className=" text-4xl hover:bg-gray-400/20 p-2 rounded-lg cursor-pointer"
-          onClick={handleTheme}
-        />
+        {isDark ? (
+          <BiSun
+            className=" text-4xl hover:bg-gray-400/20 p-2 rounded-lg cursor-pointer"
+            onClick={handleTheme}
+          />
+        ) : (
+          <BiMoon
+            className=" text-4xl hover:bg-gray-400/20 p-2 rounded-lg cursor-pointer"
+            onClick={handleTheme}
+          />
+        )}
       </div>
     </nav>
   );
