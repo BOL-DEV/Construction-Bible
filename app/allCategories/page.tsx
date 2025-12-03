@@ -3,16 +3,6 @@ import TermCard from "@/components/TermCard";
 import { getAllTerms } from "@/helper";
 import React from "react";
 
-interface Term {
-  id: string;
-  name: string;
-  definition: string;
-  image: string;
-  usage: string;
-  category: string;
-  relatedTerms: string[];
-}
-
 interface Terms {
   id: string;
   name: string;
@@ -27,7 +17,9 @@ interface Terms {
 const Page = async () => {
   const termsData = await getAllTerms();
 
-  const data = termsData.sort((a, b) => a.name.localeCompare(b.name));
+  const data = termsData.sort((a: Terms, b: Terms) =>
+    a.name.localeCompare(b.name)
+  );
 
   // console.log(data);
 
