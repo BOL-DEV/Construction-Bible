@@ -7,12 +7,6 @@ import { BiSearch } from "react-icons/bi";
 function Search() {
   // const {} = props
 
-  //   const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
-  //     const query = event.target.value;
-  //     console.log("Searching for:", query);
-  //     // Implement search logic here
-  //   };
-
   return (
     <Link href="/allCategories">
       <section className="bg-amber-50 dark:bg-neutral-900 flex flex-col items-center p-4 lg:px-40 border-y border-gray-200 dark:border-neutral-700">
