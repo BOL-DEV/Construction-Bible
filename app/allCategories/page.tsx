@@ -3,16 +3,6 @@ import TermCard from "@/components/TermCard";
 import { getAllTerms } from "@/helper";
 import React from "react";
 
-interface Term {
-  id: string;
-  name: string;
-  definition: string;
-  image: string;
-  usage: string;
-  category: string;
-  relatedTerms: string[];
-}
-
 interface Terms {
   id: string;
   name: string;
@@ -27,18 +17,9 @@ interface Terms {
 const Page = async () => {
   const termsData = await getAllTerms();
 
-  const data = termsData.sort((a, b) => a.name.localeCompare(b.name));
-
-  // console.log(data);
-
-  // const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
-  //   const query = event.target.value;
-  //   console.log("Searching for:", query);
-  //   // Implement search logic here
-
-  //   const refinedData = data.filter((d) => query === d.id);
-  //   console.log(refinedData);
-  // };
+  const data = termsData.sort((a: Terms, b: Terms) =>
+    a.name.localeCompare(b.name)
+  );
 
   return (
     <div className="flex flex-col bg-amber-50 dark:bg-neutral-900 px-5 py-10 lg:px-40 lg:py-12 gap-7 border-b border-gray-200 dark:border-neutral-700">
@@ -53,7 +34,7 @@ const Page = async () => {
         <h1 className="text-4xl font-bold dark:text-white">
           All Construction Terms
         </h1>
-        <p className="dark:text-neutral-400">{`${data.length} terms available`}</p>
+        <p className="dark:text-neutral-400">1000+ terms available</p>
       </div>
       <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-7 ">
         {data.map((term: Terms) => (
