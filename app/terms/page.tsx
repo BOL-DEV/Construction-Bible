@@ -12,25 +12,15 @@ interface Terms {
   category: string;
   relatedTerms: string[];
 }
-[];
 
 const Page = async () => {
   const termsData = await getAllTerms();
 
-  const data = termsData.sort((a: Terms, b: Terms) =>
-    a.name.localeCompare(b.name)
-  );
+  const data = termsData;
 
-  // console.log(data);
-
-  // const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
-  //   const query = event.target.value;
-  //   console.log("Searching for:", query);
-  //   // Implement search logic here
-
-  //   const refinedData = data.filter((d) => query === d.id);
-  //   console.log(refinedData);
-  // };
+  //   .sort((a: Terms, b: Terms) =>
+  //   a.name.localeCompare(b.name)
+  // );
 
   return (
     <div className="flex flex-col bg-amber-50 dark:bg-neutral-900 px-5 py-10 lg:px-40 lg:py-12 gap-7 border-b border-gray-200 dark:border-neutral-700">
@@ -39,7 +29,6 @@ const Page = async () => {
         className="bg-amber-50 p-4  rounded-lg shadow-md w-full lg:w-[50%] border border-neutral-200 dark:border-neutral-600 focus:outline-amber-600 dark:bg-neutral-800  dark:text-gray-200"
         type="search"
         placeholder="Filter construction terms..."
-        // onChange={handleSearch}
       />
       <div className="flex flex-col gap-2">
         <h1 className="text-4xl font-bold dark:text-white">

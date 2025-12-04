@@ -1,5 +1,3 @@
-export const revalidate = 3600; // ISR cache for 1 hour
-
 export async function getCategories() {
   const res = await fetch(
     "https://building-dictionary-api.onrender.com/api/categories",
@@ -17,7 +15,8 @@ export async function getCategories() {
 
 export const getAllTerms = async () => {
   const res = await fetch(
-    "https://building-dictionary-api.onrender.com/api/terms"
+    "https://building-dictionary-api.onrender.com/api/terms",
+    { cache: "no-store" }
   );
   if (!res.ok) {
     throw new Error("Failed to fetch terms");
