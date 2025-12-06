@@ -1,3 +1,5 @@
+const API_URL = process.env.URL;
+
 export interface Category {
   name: string;
   description: string;
@@ -15,12 +17,9 @@ export interface Terms {
 }
 
 export async function getCategories(): Promise<Category[]> {
-  const res = await fetch(
-    "https://building-dictionary-api.onrender.com/api/categories",
-    {
-      next: { revalidate: 3600 }, // revalidate every hour
-    }
-  );
+  const res = await fetch(`${API_URL}categories`, {
+    next: { revalidate: 3600 }, // revalidate every hour
+  });
 
   const data = await res.json();
 
@@ -32,10 +31,7 @@ export async function getCategories(): Promise<Category[]> {
 }
 
 export const getAllTerms = async (): Promise<Terms[]> => {
-  const res = await fetch(
-    "https://building-dictionary-api.onrender.com/api/terms",
-    { cache: "no-store" }
-  );
+  const res = await fetch(`${API_URL}terms`, { cache: "no-store" });
 
   const data = await res.json();
 
@@ -47,10 +43,9 @@ export const getAllTerms = async (): Promise<Terms[]> => {
 };
 
 export async function getTermByName(name: string): Promise<Terms[]> {
-  const res = await fetch(
-    `https://building-dictionary-api.onrender.com/api/terms/search?query=${name}`,
-    { cache: "no-store" }
-  );
+  const res = await fetch(`${API_URL}terms/search?query=${name}`, {
+    cache: "no-store",
+  });
 
   const data = await res.json();
 
@@ -61,10 +56,9 @@ export async function getTermByName(name: string): Promise<Terms[]> {
 }
 
 export const getCategoryData = async (category: string): Promise<Terms[]> => {
-  const res = await fetch(
-    `https://building-dictionary-api.onrender.com/api/categories/${category}`,
-    { cache: "no-store" }
-  );
+  const res = await fetch(`${API_URL}categories/${category}`, {
+    cache: "no-store",
+  });
   if (!res.ok) {
     throw new Error(`Failed to fetch terms for category: ${category}`);
   }
