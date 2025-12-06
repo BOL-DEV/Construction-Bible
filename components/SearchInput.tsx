@@ -34,7 +34,7 @@ export default function SearchInput({
       startTransition(() => {
         router.replace(nextUrl);
       });
-    }, 4000);
+    }, 2000);
 
     return () => clearTimeout(timeout);
   }, [value, searchParams, router, pathname]);
