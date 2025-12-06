@@ -1,5 +1,9 @@
 const API_URL = process.env.URL;
 
+if (!API_URL) {
+  throw new Error("URL environment variable is not set");
+}
+
 export interface Category {
   name: string;
   description: string;
