@@ -48,9 +48,9 @@ function Header() {
       </Link>
 
       <div className="flex items-center gap-10">
-        <h2 className="flex items-center gap-2.5 hover:bg-gray-400/20 p-2 rounded-lg cursor-pointer ">
+        {/* <h2 className="flex items-center gap-2.5 hover:bg-gray-400/20 p-2 rounded-lg cursor-pointer ">
           <BiHeart /> <span className="hidden md:flex">Favorites</span>
-        </h2>
+        </h2> */}
 
         {isDark ? (
           <BiSun

@@ -12,7 +12,7 @@ const Categories = async () => {
   const categories = await getCategories();
   const isLoading = !categories;
 
-  console.log(categories);
+  // console.log(categories);
 
   return (
     <section>
