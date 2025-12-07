@@ -85,29 +85,12 @@ construction-bible/
 
 ## 🌐 Deployment
 
-The easiest way to deploy is using [Vercel](https://vercel.com):
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-1. Push your code to GitHub
-2. Import the project in Vercel
-3. Add environment variable: DM
-4. Deploy!
+# Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 
-## 🤝 Contributing
+# Construction-Bible
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+A construction encyclopedia
 
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
-## 👨‍💻 Author
-
-**BOL-DEV**
-
-- GitHub: [@BOL-DEV](https://github.com/BOL-DEV)
-
-## 🙏 Acknowledgments
-
-- Construction Dictionary API for providing the comprehensive term database
-- Next.js team for the amazing framework
-- All contributors and users of this project
+> > > > > > > bf00221aa505387231342aa7d8ba9c888a6763c2
