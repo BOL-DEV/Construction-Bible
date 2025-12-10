@@ -10,13 +10,7 @@ interface Props {
 }
 
 function TermCard(props: Props) {
-  const {
-    title,
-    image = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgJmg4YOAeQ2g_M_Fq0wg0oUUHmSAMhM9SFQ&s",
-    definition,
-    usage,
-    relatedTerms,
-  } = props;
+  const { title, image, definition, usage, relatedTerms } = props;
 
   return (
     <div className=" bg-white dark:bg-neutral-800 rounded-lg shadow-md border border-gray-200 dark:border-neutral-700">

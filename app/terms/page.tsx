@@ -22,13 +22,6 @@ const Page = async ({ searchParams }: Props) => {
     ? await getTermByName(query)
     : await getAllTerms();
 
-  // console.log(data);
-
-  // const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
-  //   const query = e.target.value.toLowerCase();
-  //   const searchResult = getTermByName(query);
-  // };
-
   return (
     <div className="flex flex-col bg-amber-50 dark:bg-neutral-900 px-5 py-10 lg:px-40 lg:py-12 gap-7 border-b border-gray-200 dark:border-neutral-700">
       <BackBtn />
@@ -44,7 +37,7 @@ const Page = async ({ searchParams }: Props) => {
           <TermCard
             key={term.id ?? term.name}
             title={term.name}
-            image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgJmg4YOAeQ2g_M_Fq0wg0oUUHmSAMhM9SFQ&s"
+            image={term.image}
             definition={term.definition}
             usage={term.usage}
             relatedTerms={term.relatedTerms}

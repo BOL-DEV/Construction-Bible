@@ -27,7 +27,8 @@ const Page = async () => {
           <TermCard
             key={term.name}
             title={term.name}
-            image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgJmg4YOAeQ2g_M_Fq0wg0oUUHmSAMhM9SFQ&s"
+            image={term.image}
+
             definition={term.definition}
             usage={term.usage}
             relatedTerms={term.relatedTerms}
