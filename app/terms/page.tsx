@@ -3,6 +3,7 @@ import TermCard from "@/components/TermCard";
 import SearchInput from "@/components/SearchInput";
 import { getAllTerms, getTermByName, Terms } from "@/helper";
 import React from "react";
+import { SyncLoader } from "react-spinners";
 
 type SearchParams = { q?: string };
 
@@ -21,6 +22,7 @@ const Page = async ({ searchParams }: Props) => {
   const data: Terms[] = query
     ? await getTermByName(query)
     : await getAllTerms();
+  const isLoading = !data;
 
   return (
     <div className="flex flex-col bg-amber-50 dark:bg-neutral-900 px-5 py-10 lg:px-40 lg:py-12 gap-7 border-b border-gray-200 dark:border-neutral-700">
@@ -33,16 +35,28 @@ const Page = async ({ searchParams }: Props) => {
         <p className="dark:text-neutral-400">{data.length} terms available</p>
       </div>
       <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-7 ">
-        {data.map((term: Terms) => (
-          <TermCard
-            key={term.id ?? term.name}
-            title={term.name}
-            image={term.image}
-            definition={term.definition}
-            usage={term.usage}
-            relatedTerms={term.relatedTerms}
-          />
-        ))}
+        {isLoading ? (
+          <div className="col-span-full flex justify-center items-center py-20">
+            <SyncLoader
+              color="#b45309"
+              loading={isLoading}
+              size={15}
+              margin={8}
+              speedMultiplier={1}
+            />
+          </div>
+        ) : (
+          data.map((term: Terms) => (
+            <TermCard
+              key={term.id ?? term.name}
+              title={term.name}
+              image={term.image}
+              definition={term.definition}
+              usage={term.usage}
+              relatedTerms={term.relatedTerms}
+            />
+          ))
+        )}
       </div>
     </div>
   );
